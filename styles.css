@@ -1,0 +1,202 @@
+:root {
+    --primary-color: #00ddeb;
+    --secondary-color: #ff007a;
+    --background-dark: #0a0a23;
+    --card-dark: rgba(255, 255, 255, 0.1);
+    --text-dark: #ffffff;
+    --shadow: 0 0 20px rgba(0, 221, 235, 0.5);
+    --glow: 0 0 15px rgba(0, 221, 235, 0.7);
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 40px;
+    background: var(--background-dark);
+    color: var(--text-dark);
+    position: relative;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.particles-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 3em;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-shadow: var(--glow);
+    animation: neon-flicker 2s infinite alternate;
+}
+
+@keyframes neon-flicker {
+    0% { text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 30px var(--secondary-color); }
+    100% { text-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color), 0 0 15px var(--secondary-color); }
+}
+
+.input-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+input {
+    padding: 15px 25px;
+    width: 350px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--primary-color);
+    border-radius: 30px;
+    color: var(--text-dark);
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+input:focus {
+    border-color: var(--secondary-color);
+    box-shadow: var(--glow);
+}
+
+button#analyze-btn {
+    padding: 15px 40px;
+    font-size: 16px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-dark);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.3s;
+    box-shadow: var(--glow);
+}
+
+button#analyze-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 0, 122, 0.7);
+}
+
+.loading-spinner {
+    text-align: center;
+    font-size: 1.5em;
+    color: var(--secondary-color);
+    margin: 30px 0;
+    text-shadow: var(--glow);
+}
+
+.report-section {
+    display: none;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s, transform 0.8s;
+}
+
+.report-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.glassmorphism {
+    background: var(--card-dark);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.glassmorphism:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(0, 221, 235, 0.8);
+}
+
+.info-card {
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.info-card h2 {
+    font-size: 2em;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-shadow: var(--glow);
+    margin-bottom: 25px;
+}
+
+.info-card p {
+    margin: 12px 0;
+    font-size: 1.2em;
+    color: var(--text-dark);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.chart-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s, transform 0.8s;
+}
+
+.chart-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#verdict-chart-container {
+    max-width: 500px; /* Increased from 400px */
+    height: 400px; /* Increased from 300px */
+}
+
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1em;
+    color: var(--text-dark);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.footer i {
+    color: var(--secondary-color);
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}

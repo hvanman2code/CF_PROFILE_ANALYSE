@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codeforces Analytics</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+    <div id="particles-js" class="particles-bg"></div>
+    <div class="container">
+        <div class="header">
+            <h1>Codeforces Analytics</h1>
+        </div>
+        <div class="input-section">
+            <input type="text" id="handle" placeholder="Enter Codeforces Handle">
+            <button onclick="analyzeProfile()" id="analyze-btn">Analyze</button>
+        </div>
+        <div id="loading" class="loading-spinner" style="display: none;">
+            <i class="fas fa-spinner fa-spin"></i> Loading...
+        </div>
+        <div id="report" class="report-section">
+            <div id="basic-info" class="info-card glassmorphism"></div>
+            <div class="chart-container glassmorphism">
+                <canvas id="problemLevelChart"></canvas>
+            </div>
+            <div class="chart-container glassmorphism" id="verdict-chart-container">
+                <canvas id="verdictChart"></canvas>
+            </div>
+            <div class="chart-container glassmorphism">
+                <canvas id="ratingChangeChart"></canvas>
+            </div>
+            <div class="chart-container glassmorphism">
+                <canvas id="problemRatingChart"></canvas>
+            </div>
+            <div class="chart-container glassmorphism">
+                <canvas id="problemTypeChart"></canvas>
+            </div>
+            <div class="chart-container glassmorphism">
+                <canvas id="skillRatingChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>Made with <i class="fas fa-heart"></i> by Harshit Saraswat</p>
+    </footer>
+    <script src="script.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'934db2732b79458e',t:'MTc0NTQxNDgzMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>
